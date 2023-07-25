@@ -1,3 +1,23 @@
+body.dark-theme .order-now-modal,
+body.dark-theme .order-now-modal-form input,
+body.dark-theme .order-now-modal-form textarea {
+  color: var(--secondary-text-color);
+  background-color: var(--dark-background-color);
+}
+
+body.dark-theme .order-now-modal-form label span {
+  color: var(--dark-theme-text-color-05);
+}
+
+body.dark-theme .order-now-modal-close__img path {
+  stroke: #fff;
+}
+
+body.dark-theme .order-now-modal-form input,
+body.dark-theme .order-now-modal-form textarea {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 body.show-modal-order-now {
   overflow: hidden;
 }
@@ -104,6 +124,7 @@ textarea {
 .order-now-modal-form__input:focus,
 .order-now-modal-form textarea:focus {
   outline-color: var(--accent-color);
+  outline-offset: -1px;
 }
 
 .order-now-modal-form textarea {
