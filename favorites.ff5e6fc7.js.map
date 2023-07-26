@@ -1,1 +1,0 @@
-{"mappings":"oeAAAA,EAAA,S","sources":["src/favorites.js"],"sourcesContent":["import './js/dark-theme';\nimport './js/header-mobile-menu';\nimport './js/scroll-to-up';\nimport './js/modal-order-now';\nimport './js/favorites-page';"],"names":["parcelRequire"],"version":3,"file":"favorites.ff5e6fc7.js.map"}
