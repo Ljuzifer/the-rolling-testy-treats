@@ -53,10 +53,10 @@ function initRatings() {
       ratingItem.addEventListener('click', function (e) {
         initRatingVars(rating);
         // if (rating.dataset.ajax) {
-        //
+        //setRatingValue(ratingItem.value, input);
         // } else {
         ratingValue.innerHTML = index + 1;
-        setRatingValue(ratingItem.value, rating);
+        setRatingValue(ratingItem.value, input.value);
         setRatingActiveWidth();
 
         console.log(ratingItem.value);
@@ -85,66 +85,64 @@ function initRatings() {
   //   })
   //   .then(data => console.log(data))
   // .catch(err=>console.log(err))
+// -----------------------------------------------------------------
+//   async function setRatingValue(value, mail) {
+//     // const options = {
+//     //   method: 'PATCH',
+//     //   body: JSON.stringify({
+//     //     userRating: value,
+//     //   }),
+//     //   headers: {
+//     //     'Content-Type': 'application/json',
+//     //   },
+//     // };
 
-  async function setRatingValue(value, mail) {
-    // const options = {
-    //   method: 'PATCH',
-    //   body: JSON.stringify({
-    //     userRating: value,
-    //   }),
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    // };
-
-    // return fetch(
-    //   'https://tasty-treats-backend.p.goit.global/api/recipes/{id}/rating',
-    //   options
-    // )
-    //   .then(resp => {
-    //     if (!resp.ok) {
-    //       throw new Error(resp.statusText);
-    //     }
-    //     return resp.json();
-    //   })
-    //   .then(data => console.log(data))
-    //   .catch(err => console.log(err));
-    //  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    // if (!rating.classList.add('rating-sending')) {
-    //   rating.classList.add('rating-sending');
-    let response = await fetch(
-      'https://tasty-treats-backend.p.goit.global/api/recipes',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          userRating: value,
-          emailUser: mail,
-          // userMail: getInputData,
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
-    if (response.ok) {
-      const result = await response.json();
-      const newRating = result.newRating;
-      ratingValue.innerHTML = newRating;
-      setRatingActiveWidth();
-    } else {
-      alert('False');
-    }
-    // }
-  }
-}
+//     // return fetch(
+//     //   'https://tasty-treats-backend.p.goit.global/api/recipes/{id}/rating',
+//     //   options
+//     // )
+//     //   .then(resp => {
+//     //     if (!resp.ok) {
+//     //       throw new Error(resp.statusText);
+//     //     }
+//     //     return resp.json();
+//     //   })
+//     //   .then(data => console.log(data))
+//     //   .catch(err => console.log(err));
+//     //  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//     // if (!rating.classList.add('rating-sending')) {
+//     //   rating.classList.add('rating-sending');
+//     let response = await fetch(
+//       'https://tasty-treats-backend.p.goit.global/api/recipes',
+//       {
+//         method: 'PATCH',
+//         body: JSON.stringify({
+//           userRating: value,
+//           emailUser: mail,
+//           // userMail: getInputData,
+//         }),
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//       }
+//     );
+//     if (response.ok) {
+//       const result = await response.json();
+//       const newRating = result.newRating;
+//       ratingValue.innerHTML = newRating;
+//       setRatingActiveWidth();
+//     }
+//     // }
+//   }
+// }
 
 const modalBack = document.querySelector('.backdrop');
 
 // const modalEl = document.querySelector('.modal');
 // document.addEventListener('click', function (e) {
-//   const click = e.composedPath().includes('is-hidden');
+//   const click = e.composedPath().includes('iis-visibility-raiting');
 //   if (!click) {
-//     // refs.modal.classList.toggle('is-hidden');
+//     // refs.modal.classList.toggle('is-visibility-raiting');
 //     modalEl.style.display = 'none';
 //   }
 //   console.log(click);
@@ -153,6 +151,6 @@ const modalBack = document.querySelector('.backdrop');
 document.addEventListener('keydown', function (e) {
   if (e.code === 'Escape') {
     // код клавиши Escape, но можно использовать e.key
-    modalBack.classList.add('is-hidden');
+    modalBack.classList.add('is-visibility-raiting');
   }
 });
